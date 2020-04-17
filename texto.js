@@ -29,11 +29,11 @@ function genero()
 	c = hombre.ciudad;
 	if (hombre.sexo == "hombre") 
 	{
-		t.innerHTML = "Hola soy un hombre, y mi nombre es " + n + ". Tengo una edad de " + e +" años. Me dedico profesionalmente a "+p+ " y soy de " +c+ ". Soy padre y tengo dos hijos. Sueño con ser actor. Me gusta mucho ser ayudante. Soy Capitan de un barco. En los ratos libres soy fotógrafo. ";
+		t.innerHTML = "Hola soy un hombre, y mi nombre es " + n + ". Tengo una edad de " + e +" años. Me dedico profesionalmente a "+p+ " y soy de " +c ;
 	}
 	else
 	{
-		t.innerHTML = "Hola soy una mujer, y mi nombre es " + n + ". Tengo una edad de " + e +" años. Me dedico profesionalmente a "+p+ " y soy de " +c+ ". Soy madre y tengo dos hijos. Sueño con ser actriz. Me gusta mucho ser ayudanta. Soy Capitana de un barco. En los ratos libres soy fotógrafa. ";
+		t.innerHTML = "Hola soy una mujer, y mi nombre es " + n + ". Tengo una edad de " + e +" años. Me dedico profesionalmente a "+p+ " y soy de " +c;
 	};
 };
 
