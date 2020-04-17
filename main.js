@@ -1,3 +1,53 @@
+let name, age, city, profession, gender, checkedGender, $showData
+
+// class new user
+class NewUser{
+	constructor(name, age, city, profession, gender){
+		this.name = name,
+		this.age= age,
+		this.city = city,
+		this.profession = profession,
+		this.gender = gender
+	}
+	handleGetNewUser(){
+		name= document.querySelector('#name').value
+		age = document.querySelector('#age').value
+		city = document.querySelector('#city').value
+		profession= document.querySelector('#profession').value
+		gender = document.querySelectorAll("input[name='gender']")
+
+		this.checkedValueGender(gender)
+		this.showDataUI(name, age, city, profession, checkedGender)
+		console.log({
+			name, 
+			age, 
+			city, 
+			profession,
+			checkedGender
+		})
+	}
+	checkedValueGender(gender){
+		gender.forEach((genders, i, gender )=>{
+			let genderCheckedValue = genders.checked
+			genderCheckedValue? checkedGender= gender[i].value : null	
+		})
+	}
+	validateDate(){
+
+	}
+	showDataUI(name, age, city, profession,checkedGender){
+		$showData = document.getElementById("texto");
+		$showData.innerHTML = `Hola soy un ${checkedGender}, y mi nombre es ${name}. Tengo una edad de ${age} años. Soy ${profession} y vivo en ${city}` ;
+	}
+}
+
+
+
+
+
+
+
+
 var s, n, e, p, c, b, tsh, tsm, tn, te, tp, tc;
 
 /*tsh = document.getElementById("hombre");
@@ -10,14 +60,14 @@ function hombreMujer() {
 tn = document.getElementById("nombre");
 var tnv = tn.value;  /////////////introducir los valores
 
-function humano(s,n,e,p,c)
-{
-	this.sexo = s;
-	this.nombre = n;
-	this.edad = e;
-	this.profecion = p;
-	this.ciudad = c;
-};
+// function humano(s,n,e,p,c)
+// {
+// 	this.sexo = s;
+// 	this.nombre = n;
+// 	this.edad = e;
+// 	this.profecion = p;
+// 	this.ciudad = c;
+// };
 
 function genero() 
 {
@@ -53,10 +103,7 @@ function app()
 	$('#modal').on('shown.bs.modal', function () {
 		$('#ModalInput').trigger('focus')
 	  })
-	genero();
-	alert();
+
+	const user = new NewUser
+	user.handleGetNewUser()
 }
-
-// activate modal
-
-
