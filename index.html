@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,28 +13,56 @@
       media="screen"
     />
   </head>
-  <body>
-    <p></p>
-    <h2>Hola que tal amigo</h2>
-    <p></p>
-    <form>
-      <h4>
-        <input type="radio" id="hombre" /> Hombre <br />
-        <p></p>
-        <input type="radio" id="mujer" /> Mujer <br />
-        <p></p>
-        <input type="text" id="nombre" /> Nombre<br />
-        <p></p>
-        <input type="text" id="edad" /> Edad<br />
-        <p></p>
-        <input type="text" id="profecion" /> Profecion<br />
-        <p></p>
-        <input type="text" id="ciudad" />Ciudad<br />
-        <p></p>
-        <input type="button" id="Enviar" value="Mostrar" />
-      </h4>
-    </form>
-    <p id="texto"></p>
+  <body class="h-100">
+    <div class="h-100 d-flex justify-content-center align-items-center">
+      <!-- card -->
+      <div class="card w-25 p-3 d-flex align-items-center">
+        <p class="h3 text-center">Tus datos</p>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label> Nombre </label>
+              <input class="form-control" type="text" id="nombre" />
+            </div>
+            <div class="form-group">
+              <label> Edad</label>
+              <input class="form-control" type="text" id="edad" />
+            </div>
+            <div class="form-group">
+              <label> Ciudad</label>
+              <input class="form-control" type="text" id="ciudad" />
+            </div>
+            <div class="form-group">
+              <label>Profecion</label>
+              <input class="form-control" type="text" id="profecion" />
+            </div>
+            <div class="form-group">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="hombre" />
+                <label class="form-check-label">hombre</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="mujer" />
+                <label class="form-check-label">Mujer</label>
+              </div>
+            </div>
+            <div class="form-group d-inline">
+              <input
+                class="btn btn-primary"
+                type="button"
+                id="Enviar"
+                value="Mostar Datos"
+              />
+              <button class="btn btn-secondary" type="button">
+                Limpiar datos
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- end card -->
+      <p id="texto"></p>
+    </div>
     <script type="Text/javascript">
       inicio();
     </script>
