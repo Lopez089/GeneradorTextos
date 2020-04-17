@@ -18,7 +18,7 @@
 
     <div
       class="modal fade"
-      id="exampleModal"
+      id="modal"
       tabindex="-1"
       role="dialog"
       aria-labelledby="exampleModalLabel"
@@ -38,12 +38,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <p class="texto">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus
-              nulla consequatur eligendi explicabo voluptatum pariatur nostrum
-              quasi doloribus ratione assumenda suscipit tenetur temporibus
-              doloremque praesentium quas, natus ea optio non!
-            </p>
+            <p id="texto"></p>
           </div>
         </div>
       </div>
@@ -87,13 +82,10 @@
                 type="button"
                 id="Enviar"
                 value="Mostar Datos"
-              />
-              <button
-                class="btn btn-secondary"
-                type="button"
                 data-toggle="modal"
-                data-target="#exampleModal"
-              >
+                data-target="#modal"
+              />
+              <button class="btn btn-secondary" type="button">
                 Limpiar datos
               </button>
             </div>

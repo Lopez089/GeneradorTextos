@@ -50,7 +50,13 @@ function inicio()
 
 function app() 
 {
+	$('#modal').on('shown.bs.modal', function () {
+		$('#ModalInput').trigger('focus')
+	  })
 	genero();
 	alert();
 }
+
+// activate modal
+
 
