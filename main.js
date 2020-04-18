@@ -1,4 +1,4 @@
-let name, age, city, profession, gender, checkedGender, $showData
+let name, age, city, profession, gender, checkedGender, $showData, $buttonSubmit, $form, $buttonReset
 
 // class new user
 class NewUser{
@@ -12,13 +12,7 @@ class NewUser{
 
 		this.checkedValueGender(gender)
 		this.showDataUI(name, age, city, profession, checkedGender)
-		console.log({
-			name, 
-			age, 
-			city, 
-			profession,
-			checkedGender
-		})
+		
 	}
 	checkedValueGender(gender){
 		gender.forEach((genders, i, gender )=>{
@@ -33,13 +27,20 @@ class NewUser{
 		$showData = document.getElementById("texto");
 		$showData.innerHTML = `Hola soy un ${checkedGender}, y mi nombre es ${name}. Tengo ${age} años. Soy ${profession} y vivo en ${city}.` ;
 	}
+	resetForm(){
+		$form = document.querySelector('form')
+		$form.reset()
+	}
 }
-
 
 function inicio() 
 {
-	b = document.getElementById("Enviar");
-	b.addEventListener("click", app);
+	const user = new NewUser
+
+	$buttonSubmit = document.querySelector("#buttonEnviar");
+	$buttonSubmit.addEventListener("click", app);
+	$buttonReset = document.querySelector('#buttonReset')
+	$buttonReset.addEventListener("click", user.resetForm)
 };
 
 function app() 
@@ -50,4 +51,5 @@ function app()
 
 	const user = new NewUser
 	user.handleGetNewUser()
+	user.resetForm()
 }
