@@ -1,14 +1,8 @@
-let name, age, city, profession, gender, checkedGender, $showData
+let name, age, city, profession, gender, checkedGender, $showData, $buttonSubmit, $form, $buttonReset
 
 // class new user
 class NewUser{
-	constructor(name, age, city, profession, gender){
-		this.name = name,
-		this.age= age,
-		this.city = city,
-		this.profession = profession,
-		this.gender = gender
-	}
+	
 	handleGetNewUser(){
 		name= document.querySelector('#name').value
 		age = document.querySelector('#age').value
@@ -18,13 +12,7 @@ class NewUser{
 
 		this.checkedValueGender(gender)
 		this.showDataUI(name, age, city, profession, checkedGender)
-		console.log({
-			name, 
-			age, 
-			city, 
-			profession,
-			checkedGender
-		})
+		
 	}
 	checkedValueGender(gender){
 		gender.forEach((genders, i, gender )=>{
@@ -37,65 +25,25 @@ class NewUser{
 	}
 	showDataUI(name, age, city, profession,checkedGender){
 		$showData = document.getElementById("texto");
-		$showData.innerHTML = `Hola soy un ${checkedGender}, y mi nombre es ${name}. Tengo una edad de ${age} años. Soy ${profession} y vivo en ${city}` ;
+		$showData.innerHTML = `Hola soy un ${checkedGender}, y mi nombre es ${this.capitalLetter(name)}. Tengo ${age} años. Soy ${profession}, y vivo en ${this.capitalLetter(city)}.` ;
+	}
+	resetForm(){
+		$form = document.querySelector('form')
+		$form.reset()
+	}
+	capitalLetter(string){
+		return string.charAt(0).toUpperCase() + string.slice(1);
 	}
 }
 
-
-
-
-
-
-
-
-var s, n, e, p, c, b, tsh, tsm, tn, te, tp, tc;
-
-/*tsh = document.getElementById("hombre");
-tsm = document.getElementById("mujer");
-var tsmv = (tsh.value);
-function hombreMujer() {
-	
-}*/
-
-tn = document.getElementById("nombre");
-var tnv = tn.value;  /////////////introducir los valores
-
-// function humano(s,n,e,p,c)
-// {
-// 	this.sexo = s;
-// 	this.nombre = n;
-// 	this.edad = e;
-// 	this.profecion = p;
-// 	this.ciudad = c;
-// };
-
-function genero() 
-{
-	var t = document.getElementById("texto");
-	s = hombre.sexo;
-	n = hombre.nombre;
-	e = hombre.edad;
-	p = hombre.profecion;
-	c = hombre.ciudad;
-	if (hombre.sexo == "hombre") 
-	{
-		t.innerHTML = "Hola soy un hombre, y mi nombre es " + n + ". Tengo una edad de " + e +" años. Me dedico profesionalmente a "+p+ " y soy de " +c ;
-	}
-	else
-	{
-		t.innerHTML = "Hola soy una mujer, y mi nombre es " + n + ". Tengo una edad de " + e +" años. Me dedico profesionalmente a "+p+ " y soy de " +c;
-	};
-};
-
-
 function inicio() 
 {
-	b = document.getElementById("Enviar");
-	b.addEventListener("click", app);
-	
+	const user = new NewUser
 
-	//var hombre = new humano("mujer","pepe",28,"pescadero","cadiz");
-	
+	$buttonSubmit = document.querySelector("#buttonEnviar");
+	$buttonSubmit.addEventListener("click", app);
+	$buttonReset = document.querySelector('#buttonReset')
+	$buttonReset.addEventListener("click", user.resetForm)
 };
 
 function app() 
@@ -106,4 +54,5 @@ function app()
 
 	const user = new NewUser
 	user.handleGetNewUser()
+	user.resetForm()
 }

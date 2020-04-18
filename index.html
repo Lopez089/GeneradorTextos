@@ -44,7 +44,14 @@
       </div>
     </div>
     <!-- end modal -->
-    <div class="h-100 d-flex justify-content-center align-items-center">
+    <div
+      class="h-100 d-flex flex-column justify-content-center align-items-center"
+    >
+      <div class="row">
+        <blockquote class="blockquote mb-5">
+          Rellenar el formulario para que te genere un texto personalizado
+        </blockquote>
+      </div>
       <!-- card -->
       <div class="card w-25 p-3 d-flex align-items-center">
         <p class="mt-4 h3 text-center">Tus datos</p>
@@ -92,12 +99,12 @@
               <input
                 class="btn btn-primary"
                 type="button"
-                id="Enviar"
+                id="buttonEnviar"
                 value="Mostar Datos"
                 data-toggle="modal"
                 data-target="#modal"
               />
-              <button class="btn btn-secondary" type="button">
+              <button class="btn btn-secondary" type="button" id="buttonReset">
                 Limpiar datos
               </button>
             </div>
