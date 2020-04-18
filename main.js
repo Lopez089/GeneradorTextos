@@ -25,11 +25,14 @@ class NewUser{
 	}
 	showDataUI(name, age, city, profession,checkedGender){
 		$showData = document.getElementById("texto");
-		$showData.innerHTML = `Hola soy un ${checkedGender}, y mi nombre es ${name}. Tengo ${age} años. Soy ${profession} y vivo en ${city}.` ;
+		$showData.innerHTML = `Hola soy un ${checkedGender}, y mi nombre es ${this.capitalLetter(name)}. Tengo ${age} años. Soy ${profession}, y vivo en ${this.capitalLetter(city)}.` ;
 	}
 	resetForm(){
 		$form = document.querySelector('form')
 		$form.reset()
+	}
+	capitalLetter(string){
+		return string.charAt(0).toUpperCase() + string.slice(1);
 	}
 }
 
